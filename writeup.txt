@@ -1,0 +1,9 @@
+Exercise 2
+1.  A person's id should dictate their name.  A car's license plate number should dictate their make, model, capacity, and driver id. 	 
+2.  They all conform.
+3.  Maybe some kind of location field to help with distances (not everyone lives in the same home, necessarily.  It would be really cute if you guys did).  
+
+Exercise 4.
+1.  If either query returns anything other than an empty relation, then the sets of drivers driving back and forth are inconsistent.
+2.  If either query returns anything other than an empty relation, then someone riding to work does not have a ride home.
+3.  
