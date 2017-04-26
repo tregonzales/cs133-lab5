@@ -1,9 +1,10 @@
-drop table if exists Person;
-drop table if exists Car;
-drop table if exists DrivesThere;
-drop table if exists DrivesBack;
-drop table if exists RidesThere;
+
 drop table if exists RidesBack;
+drop table if exists RidesThere;
+drop table if exists DrivesBack;
+drop table if exists DrivesThere;
+drop table if exists Car;
+drop table if exists Person;
 
 .header on
 .mode column

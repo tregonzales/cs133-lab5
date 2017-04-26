@@ -1,5 +1,5 @@
 --EXERCISE 4)1.
-/*
+
 BEGIN TRANSACTION;
 
 SELECT C.id
@@ -18,7 +18,7 @@ WHERE DB.lpn = C.lpn AND DB.day = 2017-11-20 AND C.id NOT IN (
 											WHERE DT.day = 2017-11-20 AND DT.lpn = C2.lpn
 																			);
 END TRANSACTION;
-
+/*
 -- 2.
 BEGIN TRANSACTION;
 
@@ -57,7 +57,7 @@ HAVING passengers < C.capacity-1 AND RT.t > (
 											);
 
 END TRANSACTION;
-*/
+
 --2. 
 BEGIN TRANSACTION;
 
@@ -79,5 +79,6 @@ INSERT INTO DrivesThere (lpn, day, t) VALUES ('3333333', 2017-11-20, '06:00');
 INSERT INTO DrivesBack (lpn, day, t) VALUES ('3333333', 2017-11-20, '22:00');
 
 END TRANSACTION;
+*/
 
 
