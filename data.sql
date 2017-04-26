@@ -14,10 +14,10 @@ INSERT INTO Car (lpn, mm, capacity, id) VALUES ("4444444", "Beths car", 5, 1);
 
 --beth and stone are driving
 INSERT INTO DrivesThere (lpn, day, t) VALUES ("4444444", 2017-11-20, "06:00");
-INSERT INTO DrivesThere (lpn, day, t) VALUES ("2222222", 2017-11-20, "07:00");
+INSERT INTO DrivesThere (lpn, day, t) VALUES ("2222222", 2017-11-20, "05:00");
 
 INSERT INTO DrivesBack (lpn, day, t) VALUES ("4444444", 2017-11-20, "16:00");
-INSERT INTO DrivesBack (lpn, day, t) VALUES ("1111111", 2017-11-20, "23:00");
+INSERT INTO DrivesBack (lpn, day, t) VALUES ("2222222", 2017-11-20, "23:00");
 
 --rides there
 --whose in beths car

@@ -4,6 +4,6 @@ Exercise 2
 3.  Maybe some kind of location field to help with distances (not everyone lives in the same home, necessarily.  It would be really cute if you guys did).  
 
 Exercise 4.
-1.  If either query returns anything other than an empty relation, then the sets of drivers driving back and forth are inconsistent.
-2.  If either query returns anything other than an empty relation, then someone riding to work does not have a ride home.
-3.  
+1.  If the sets of drivers driving back and forth are inconsistent, the query will return the ids of those drivers that are only driving one way.
+2.  If someone riding to work does not have a ride home, their id is returned.
+3.  If the number of passengers in a car exceeds the capacity or is less than 2, the query will return the lpn, the capacity, and the number of passengers currently in the car.

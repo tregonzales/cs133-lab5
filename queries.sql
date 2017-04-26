@@ -1,5 +1,5 @@
 --EXERCISE 4)1.
-
+/*
 BEGIN TRANSACTION;
 
 SELECT C.id
@@ -18,7 +18,7 @@ WHERE DB.lpn = C.lpn AND DB.day = 2017-11-20 AND C.id NOT IN (
 											WHERE DT.day = 2017-11-20 AND DT.lpn = C2.lpn
 																			);
 END TRANSACTION;
-/*
+
 -- 2.
 BEGIN TRANSACTION;
 
@@ -31,22 +31,25 @@ WHERE RT.day = 2017-11-20 AND RT.id NOT IN (
 																	);
 END TRANSACTION;
 
+
 -- 3.
+/*
 BEGIN TRANSACTION;
 
-SELECT COUNT(RT.id) AS passengers
-FROM RidesThere RT, Car C
-WHERE RT.day = 2017-11-20 AND C.lpn = RT.lpn 
-GROUP BY RT.lpn
+SELECT C.lpn, C.capacity, COUNT(RT.id) AS passengers
+FROM DrivesThere DT LEFT JOIN RidesThere RT ON DT.lpn = RT.lpn, Car C
+WHERE DT.day = 2017-11-20 AND C.lpn = DT.lpn 
+GROUP BY DT.lpn
 HAVING passengers < 1 OR passengers > C.capacity-1;
 
 END TRANSACTION;
+
 
 --Exercise 5
 --1 The keller problem.  
 BEGIN TRANSACTION;
 
-SELECT COUNT(RT.id) AS passengers
+SELECT C.lpn, RT.t, COUNT(RT.id) AS passengers
 FROM RidesThere RT, Car C
 WHERE RT.day = 2017-11-20 AND C.lpn = RT.lpn 
 GROUP BY RT.lpn
@@ -57,8 +60,9 @@ HAVING passengers < C.capacity-1 AND RT.t > (
 											);
 
 END TRANSACTION;
-
+*/
 --2. 
+
 BEGIN TRANSACTION;
 
 DELETE FROM RidesThere
@@ -75,10 +79,9 @@ WHERE RidesBack.id IN (
 						WHERE RidesBack.id = Person.id AND Person.name = 'Bob'
 						);
 
-INSERT INTO DrivesThere (lpn, day, t) VALUES ('3333333', 2017-11-20, '06:00');
-INSERT INTO DrivesBack (lpn, day, t) VALUES ('3333333', 2017-11-20, '22:00');
+INSERT INTO DrivesThere (lpn, day, t) VALUES ('3333333', '2017-11-20', '06:00');
+INSERT INTO DrivesBack (lpn, day, t) VALUES ('3333333', '2017-11-20', '22:00');
 
 END TRANSACTION;
-*/
 
 
