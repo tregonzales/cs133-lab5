@@ -1,0 +1,74 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE Person (
+id INT,
+name CHAR(20),
+PRIMARY KEY(id)
+);
+INSERT INTO "Person" VALUES(1,'Beth');
+INSERT INTO "Person" VALUES(2,'Dodds');
+INSERT INTO "Person" VALUES(3,'Bob');
+INSERT INTO "Person" VALUES(4,'The Stone');
+INSERT INTO "Person" VALUES(5,'Z');
+INSERT INTO "Person" VALUES(6,'Kate');
+INSERT INTO "Person" VALUES(7,'Ben');
+CREATE TABLE DrivesThere (
+lpn CHAR(7),
+day date,
+t time,
+PRIMARY KEY(lpn,day),
+FOREIGN KEY (lpn) REFERENCES Car
+);
+INSERT INTO "DrivesThere" VALUES('4444444','2017-11-20','06:00');
+INSERT INTO "DrivesThere" VALUES('2222222','2017-11-20','05:00');
+CREATE TABLE DrivesBack (
+lpn CHAR(7),
+day date,
+t time,
+PRIMARY KEY(lpn,day),
+FOREIGN KEY (lpn) REFERENCES Car
+);
+INSERT INTO "DrivesBack" VALUES('4444444','2017-11-20','16:00');
+INSERT INTO "DrivesBack" VALUES('2222222','2017-11-20','23:00');
+CREATE TABLE RidesThere (
+id INT,
+day date,
+lpn CHAR(7),
+t time,
+PRIMARY KEY(id,day),
+FOREIGN KEY (id) REFERENCES Person,
+FOREIGN KEY (lpn) REFERENCES Car
+);
+INSERT INTO "RidesThere" VALUES(6,'2017-11-20','4444444','06:00');
+INSERT INTO "RidesThere" VALUES(7,'2017-11-20','4444444','06:00');
+INSERT INTO "RidesThere" VALUES(2,'2017-11-20','4444444','06:00');
+INSERT INTO "RidesThere" VALUES(5,'2017-11-20','2222222','05:00');
+INSERT INTO "RidesThere" VALUES(3,'2017-11-20','2222222','05:00');
+CREATE TABLE RidesBack (
+id INT,
+day date,
+lpn CHAR(7),
+t time,
+PRIMARY KEY(id,day),
+FOREIGN KEY (id) REFERENCES Person,
+FOREIGN KEY (lpn) REFERENCES Car
+);
+INSERT INTO "RidesBack" VALUES(6,'2017-11-20','4444444','16:00');
+INSERT INTO "RidesBack" VALUES(7,'2017-11-20','4444444','16:00');
+INSERT INTO "RidesBack" VALUES(2,'2017-11-20','4444444','16:00');
+INSERT INTO "RidesBack" VALUES(5,'2017-11-20','2222222','23:00');
+INSERT INTO "RidesBack" VALUES(3,'2017-11-20','2222222','23:00');
+CREATE TABLE Car (
+lpn CHAR(7),
+mm CHAR(25),
+capacity INT,
+id INT,
+PRIMARY KEY (lpn),
+FOREIGN KEY (id) REFERENCES Person
+);
+INSERT INTO "Car" VALUES('0000000','ford fiesta',5,2);
+INSERT INTO "Car" VALUES('1111111','toyota prius',5,6);
+INSERT INTO "Car" VALUES('2222222','gmc big ass van',7,4);
+INSERT INTO "Car" VALUES('3333333','64 impala',5,3);
+INSERT INTO "Car" VALUES('4444444','Beths car',5,1);
+COMMIT;

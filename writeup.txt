@@ -1,9 +1,18 @@
+Julia and Frank (Tre)
+
 Exercise 2
 1.  A person's id should dictate their name.  A car's license plate number should dictate their make, model, capacity, and driver id. 	 
 2.  They all conform.
 3.  Maybe some kind of location field to help with distances (not everyone lives in the same home, necessarily.  It would be really cute if you guys did).  
 
+Exercise 3.
+1.  We removed id from DrivesThere and DrivesBack.
+
 Exercise 4.
 1.  If the sets of drivers driving back and forth are inconsistent, the query will return the ids of those drivers that are only driving one way.
 2.  If someone riding to work does not have a ride home, their id is returned.
 3.  If the number of passengers in a car exceeds the capacity or is less than 2, the query will return the lpn, the capacity, and the number of passengers currently in the car.
+
+DrivesThere and DrivesBack represent relations of cars meant to indicate the drivers for a specific day.  RidesThere and RidesBack represent relations to indicate passengers for a specific day.  I worked with Julia, no personal information has arisen about her.  We spent about 8 hours on this lab and it seemed pretty straight forward.
+
+*We do not know why the data dump turned our PRAGMA foreign keys off, because through our testing, our constraints were upheld.

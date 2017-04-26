@@ -17,7 +17,6 @@ PRIMARY KEY(id)
 ); 
 
 CREATE TABLE DrivesThere (
---id INT,
 lpn CHAR(7),
 day date,
 t time,
@@ -26,7 +25,6 @@ FOREIGN KEY (lpn) REFERENCES Car
 );
 
 CREATE TABLE DrivesBack (
---id INT,
 lpn CHAR(7),
 day date,
 t time,
